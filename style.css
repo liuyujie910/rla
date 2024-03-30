@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+Simplified+Chinese');
+
+::selection {
+	color: #000000;
+	background: #E0EEFF;
+}
+
+body {
+	font-family: 'Noto Sans Simplified Chinese', sans-serif;
+	background: white;
+	font-weight: 400;
+	overflow: hidden;
+}
+
+body.switched {
+	transition: color 0.6s, background-color 0.6s;
+}
+
+
+h1,
+h2 {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #000;
+	font-size: 16pt;
+	margin-bottom: 16px;
+	letter-spacing: 2px;
+}
+
+h2 {
+	font-size: 14pt;
+}
+
+.header {
+	padding-bottom: 2em;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #EFEFF0;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+/*
+  Built-in class:
+    # author: Name
+*/
+.byline {
+	font-size: 10pt;
+	color: #0375FF;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+
+/* 
+  Enables <iframe> support work on itch.io when using mobile iOS
+*/
+
+.outerContainer {
+	position: absolute;
+	display: block;
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+@media screen and (max-width: 980px) {
+	.outerContainer {
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.container {
+		padding-top: 80px;
+	}
+}
+
+.container {
+	display: block;
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.switched .container {
+	transition: background-color 0.6s;
+}
+
+p {
+	font-size: 12pt;
+	color: #3D3D3D;
+	line-height: 1.7em;
+	letter-spacing: 1px;
+}
+
+a {
+	color: #3D3D3D;
+	font-weight: 600;
+	text-decoration: none;
+	background-color: #EFEFF0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-right: 10px;
+	border-radius: 4px;
+}
+
+a:hover {
+	color: #0375FF;
+	background-color: #E0EEFF;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	Padding-bottom: 4px;
+	border-radius: 4px;
+}
+
+strong {
+	color: black;
+	font-weight: bold;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.container .hide {
+	opacity: 0.0;
+}
+
+.container .invisible {
+	display: none;
+}
+
+.container>* {
+	opacity: 1.0;
+	transition: opacity 1.0s;
+}
+
+/*
+  Class applied to all choices
+  (Will always appear inside <p> element by default.)
+*/
+
+.choice {
+	text-align: center;
+	line-height: 1.7em;
+}
+
+/* 
+  Class applied to first choice
+*/
+
+:not(.choice)+.choice {
+	padding-top: 1em;
+}
+
+/*
+  Class applied to choice links
+*/
+.choice a {
+	display: block;
+	max-width: 100%;
+	text-align: center;
+	font-size: 12pt;
+	color: #0375FF;
+	background-color: #E0EEFF;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	Padding-bottom: 4px;
+	border-radius: 4px;
+}
+
+.choice a:hover {
+	color: white;
+	background-color: #0375FF;
+}
+
+/* 
+  Built-in class:
+    The End # CLASS: end
+*/
+.end {
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#controls {
+	z-index: 4;
+	font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	right: 14px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	user-select: none;
+	background: white;
+	transition: color 0.6s, background 0.6s;
+	letter-spacing: 2px;
+}
+
+#controls [disabled] {
+	color: #D3D3D3;
+}
+
+#controls>*:not(:last-child):after {
+	content: "";
+}
+
+@media screen and (max-width: 980px) {
+	#controls {
+		z-index: 2;
+		top: 0;
+		left: 0;
+		right: 0;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: #EFEFF0;
+	}
+}
+
+/* 
+  Dark Theme (Added in Inky 0.10.0)
+    # theme: dark
+*/
+
+body.dark {
+	background: black;
+	color: white;
+}
+
+.dark h2 {
+	color: #000;
+}
+
+.dark .container {
+	background: black;
+}
+
+.dark .written-in-ink {
+	background: black;
+}
+
+.dark a {
+	color: #9A9A9A;
+	transition: color 0.6s;
+}
+
+.dark a:hover {
+	color: white;
+}
+
+.dark strong {
+	color: white;
+}
+
+.dark #controls [disabled] {
+	color: #444;
+}
+
+.dark .end {
+	color: white;
+}
+
+.dark #controls {
+	background: black;
+}
+
+.important {
+	color: #0375FF;
+}
+
+.hint {
+	color: #64B271;
+	font-size: 11pt;
+	background-color: #E0F0E3;
+	transition: color 0.1s;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	Padding-bottom: 4px;
+	border-radius: 4px;
+	text-align: center;
+
+}
+
+.hint:before {
+	content: "【解锁问题】"
+}
+
+.ending {
+	color: white;
+	font-size: 13pt;
+	font-weight: bold;
+	background-color: #000;
+	transition: color 0.1s;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	Padding-bottom: 8px;
+	border-radius: 4px;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.ending:before {
+	content: "【达成结局】"
+}
+
+.police {
+	display: block;
+	background-color: #EFEFF0;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 80%;
+}
+
+.police:before {
+	display: block;
+	content: "警员";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #8F8F90;
+	margin-bottom: 10px;
+
+}
+
+.player {
+	background-color: #0075FF;
+	color: #ffffff;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	margin-left: 20%;
+}
+
+.ostapenko {
+	display: block;
+	background-color: #FFF2F1;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.ostapenko:before {
+	display: block;
+	content: "奥斯塔彭科";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #F86E6E;
+	margin-bottom: 10px;
+}
+
+.pegula {
+	display: block;
+	background-color: #ebf5fa;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.pegula:before {
+	display: block;
+	content: "佩古拉";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #76afcb;
+	margin-bottom: 10px;
+}
+
+.kasatkina {
+	display: block;
+	background-color: #fff5e0;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.kasatkina:before {
+	display: block;
+	content: "卡萨金娜";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #eeb872;
+	margin-bottom: 10px;
+}
+
+.collins {
+	display: block;
+	background-color: #ebf4f1;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.collins:before {
+	display: block;
+	content: "科林斯";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #1dbf7e;
+	margin-bottom: 10px;
+}
+
+.barty {
+	display: block;
+	background-color: #f2f3fd;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.barty:before {
+	display: block;
+	content: "巴蒂";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #7F84FC;
+	margin-bottom: 10px;
+}
+
+.osaka {
+	display: block;
+	background-color: #f9ede6;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.osaka:before {
+	display: block;
+	content: "大坂直美";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #FF6E25;
+	margin-bottom: 10px;
+}
+
+.bencic {
+	display: block;
+	background-color: #EFEFF0;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.bencic:before {
+	display: block;
+	content: "本西奇";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #8F8F90;
+	margin-bottom: 10px;
+}
+
+.iga {
+	display: block;
+	background-color: #EFEFF0;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.iga:before {
+	display: block;
+	content: "斯维亚特克";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #8F8F90;
+	margin-bottom: 10px;
+}
+
+.coco {
+	display: block;
+	background-color: #EFEFF0;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.coco:before {
+	display: block;
+	content: "高芙";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #8F8F90;
+	margin-bottom: 10px;
+}
+
+.dead {
+	display: block;
+	background-color: #DBF9C5;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.nick {
+	display: block;
+	background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+	color: #000000;
+	transition: color 0.1s;
+	line-height: 1.5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	max-width: 70%;
+}
+
+.nick:before {
+	display: block;
+	content: "尼克博士";
+	font-weight: 600;
+	letter-spacing: 2px;
+	max-width: max-content;
+	color: #001F6C;
+	margin-bottom: 10px;
+}
+
+.news {
+	display: block;
+	background-color: white;
+  border-style: solid;
+  border-color: #f5f5f5;
+	transition: color 0.1s;
+	line-height: 1.7em;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 6px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.news:before {
+	display: block;
+	content: "新闻内容选自《网球时报》";
+	font-weight: 600;
+  letter-spacing: 2px;
+	max-width: max-content;
+  color: #26762D;
+  border-radius: 100px;
+	background-color: #D4E4D5;
+  margin-bottom: 14px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.wiki {
+	display: block;
+	background-color: #F8F9FA;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #A2A9B1;
+	transition: color 0.1s;
+	line-height: 1.7em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.wiki:before {
+	display: block;
+	content: "维基百科";
+  font-size: 20px;
+	font-weight: 500;
+  border-bottom-style: solid;
+  border-color: #dee5ed;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+}
+
+.chattime {
+  color: #DDDDDD;
+  text-align: center;
+}
